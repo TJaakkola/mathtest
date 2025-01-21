@@ -1,3 +1,5 @@
+import { TestQuestion } from '../components/MathTest/MathTest';
+
 type Operator = '+' | '-' | '*' | '/';
 
 interface ValidationConfig {
@@ -68,11 +70,6 @@ export function findValidDivisor(numbers: number[], dividend: number): number | 
   return validDivisors.length > 0 
     ? validDivisors[Math.floor(Math.random() * validDivisors.length)]
     : null;
-}
-
-interface QuestionKey {
-  numbers: [number, number]
-  operator: Operator
 }
 
 export function isDuplicateQuestion(
