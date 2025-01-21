@@ -2,6 +2,7 @@ import { TestQuestion } from '../components/MathTest/MathTest';
 
 type Operator = '+' | '-' | '*' | '/';
 
+/*
 interface ValidationConfig {
   maxResult?: number;
   minResult?: number;
@@ -11,12 +12,12 @@ const DEFAULT_CONFIG: ValidationConfig = {
   maxResult: 200,
   minResult: 0,
 };
+*/
 
 export function isValidQuestion(
   firstNumber: number,
   secondNumber: number,
   operator: Operator,
-  config: ValidationConfig = DEFAULT_CONFIG
 ): boolean {
   switch (operator) {
     case '-':
@@ -71,6 +72,7 @@ export function findValidDivisor(numbers: number[], dividend: number): number | 
     ? validDivisors[Math.floor(Math.random() * validDivisors.length)]
     : null;
 }
+
 
 export function isDuplicateQuestion(
   existingQuestions: TestQuestion[],
