@@ -26,7 +26,12 @@ export function isValidQuestion(
       return firstNumber >= secondNumber;
 
     case '*':
-      // Multiplication: if both numbers > 10, result must be < 200
+      /* Multiplication: 
+       * if both numbers > 10, result must be < 200
+       * no multiplication by 1 or 10
+       */       
+      if (firstNumber === 10 || secondNumber === 10) return false;
+      if (firstNumber === 1 || secondNumber === 1) return false;
       if (firstNumber > 10 || secondNumber > 10) {
         return (firstNumber * secondNumber) < 200;
       }
@@ -72,7 +77,6 @@ export function findValidDivisor(numbers: number[], dividend: number): number | 
     ? validDivisors[Math.floor(Math.random() * validDivisors.length)]
     : null;
 }
-
 
 export function isDuplicateQuestion(
   existingQuestions: TestQuestion[],
