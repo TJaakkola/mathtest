@@ -36,5 +36,7 @@ jobs:
           npm install -g aws-cdk
           cdk deploy --require-approval never
 
-      - name: Output CloudFront URL
-        run: echo "CloudFront URL: $(cdk synth | grep DistributionDomainName)"
+       - name: Output CloudFront URL
+        run: |
+          DISTRIBUTION_NAME=$(aws cloudfront list-distributions --query "DistributionList.Items[?Comment=='MathTestDistribution'].DomainName" --output text)
+          echo "CloudFront URL: $DISTRIBUTION_NAME"
