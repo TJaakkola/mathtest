@@ -19,10 +19,13 @@ export function isValidQuestion(
   secondNumber: number,
   operator: Operator,
 ): boolean {
+
+  if (firstNumber === 0 || secondNumber === 0) return false;
+
   switch (operator) {
     case '-':
       // Subtraction: result must not be negative and subtractor must not be zero
-      if (secondNumber === 0) return false;
+      if (firstNumber === secondNumber) return false;
       return firstNumber >= secondNumber;
 
     case '·':
@@ -39,7 +42,7 @@ export function isValidQuestion(
 
     case ':':
       // Division: result must be a whole number, no division by zero or one
-      if (secondNumber === 0 || secondNumber === 1) return false;
+      if (firstNumber === 1 || secondNumber === 1 || firstNumber === secondNumber) return false;
       return firstNumber % secondNumber === 0;
 
     case '+':
