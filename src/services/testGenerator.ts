@@ -2,7 +2,7 @@ import { TestParametersData } from '../components/TestParameters/TestParameters'
 import { TestQuestion } from '../components/MathTest/MathTest';
 import { isValidQuestion, findValidDivisor, isDuplicateQuestion } from '../utils/testValidation';
 
-type Operator = '+' | '-' | '*' | '/';
+type Operator = '+' | '-' | '·' | ':';
 
 export function generateMathTest(parameters: TestParametersData): TestQuestion[] {
   const generateNumbers = (): number[] => {
@@ -25,7 +25,7 @@ export function generateMathTest(parameters: TestParametersData): TestQuestion[]
     maxAttempts = 100
   ): { firstNumber: number; secondNumber: number } | null => {
     for (let attempt = 0; attempt < maxAttempts; attempt++) {
-      if (operator === '/') {
+      if (operator === ':') {
         const dividend = getRandomElement(numbers);
         const divisor = findValidDivisor(numbers, dividend);
         

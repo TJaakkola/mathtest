@@ -1,6 +1,6 @@
 import { TestQuestion } from '../components/MathTest/MathTest';
 
-type Operator = '+' | '-' | '*' | '/';
+type Operator = '+' | '-' | '·' | ':';
 
 /*
 interface ValidationConfig {
@@ -25,7 +25,7 @@ export function isValidQuestion(
       if (secondNumber === 0) return false;
       return firstNumber >= secondNumber;
 
-    case '*':
+    case '·':
       /* Multiplication: 
        * if both numbers > 10, result must be < 200
        * no multiplication by 1 or 10
@@ -37,7 +37,7 @@ export function isValidQuestion(
       }
       return true;
 
-    case '/':
+    case ':':
       // Division: result must be a whole number, no division by zero or one
       if (secondNumber === 0 || secondNumber === 1) return false;
       return firstNumber % secondNumber === 0;
@@ -57,9 +57,9 @@ export function calculateResult(first: number, second: number, operator: Operato
       return first + second;
     case '-':
       return first - second;
-    case '*':
+    case '·':
       return first * second;
-    case '/':
+    case ':':
       if (second === 0) throw new Error('Division by zero');
       return first / second;
     default:
@@ -85,7 +85,7 @@ export function isDuplicateQuestion(
   operator: Operator
 ): boolean {
   // For addition and multiplication, order doesn't matter
-  const isCommutative = operator === '+' || operator === '*'
+  const isCommutative = operator === '+' || operator === '·'
   
   return existingQuestions.some(q => {
     if (q.operator !== operator) return false;

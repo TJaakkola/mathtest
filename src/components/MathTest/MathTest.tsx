@@ -100,7 +100,7 @@ export function MathTest({ questions, onClose, onSubmit }: MathTestProps) {
               </Typography>
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 2 }}>
                 <Typography variant="h5" sx={{ fontWeight: 500 }}>
-                  {question.firstNumber} {question.operator} {question.secondNumber} = 
+                  {question.firstNumber} {question.operator === '*' ? '·' : question.operator === '/' ? ':' : question.operator} {question.secondNumber} = 
                 </Typography>
                 <TextField
                   type="number"

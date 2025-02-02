@@ -57,8 +57,8 @@ interface TestParametersProps {
 const OPERATORS = [
   { value: '+', label: 'Yhteenlasku (+)' },
   { value: '-', label: 'Vähennyslasku (-)' },
-  { value: '*', label: 'Kertolasku (×)' },
-  { value: '/', label: 'Jakolasku (÷)' },
+  { value: '·', label: 'Kertolasku (·)' },
+  { value: ':', label: 'Jakolasku (:)' },
 ]
 
 const QUESTION_COUNTS = [10, 20, 30, 40, 50]

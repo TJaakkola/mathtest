@@ -75,7 +75,7 @@ export function TestResults({ questions, answers, onNewTest }: TestResultsProps)
                 </Typography>
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
                   <Typography variant="h6">
-                    {question.firstNumber} {question.operator} {question.secondNumber} = {' '}
+                    {question.firstNumber} {question.operator === '*' ? '·' : question.operator === '/' ? ':' : question.operator} {question.secondNumber} = {' '}
                     {isUnanswered ? '-' : userAnswer}
                   </Typography>
                   {!isCorrect && (
