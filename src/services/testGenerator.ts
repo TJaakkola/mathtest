@@ -1,6 +1,6 @@
 import { TestParametersData } from '../components/TestParameters/TestParameters';
 import { TestQuestion } from '../components/MathTest/MathTest';
-import { isValidQuestion, findValidDivisor, isDuplicateQuestion } from '../utils/testValidation';
+import { isValidQuestion, isDuplicateQuestion } from '../utils/testValidation';
 
 type Operator = '+' | '-' | '·' | ':';
 

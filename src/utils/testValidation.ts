@@ -70,17 +70,6 @@ export function calculateResult(first: number, second: number, operator: Operato
   }
 }
 
-export function findValidDivisor(numbers: number[], dividend: number): number | null {
-  const validDivisors = numbers.filter(num => 
-    num !== 0 && 
-    dividend % num === 0
-  );
-  
-  return validDivisors.length > 0 
-    ? validDivisors[Math.floor(Math.random() * validDivisors.length)]
-    : null;
-}
-
 export function isDuplicateQuestion(
   existingQuestions: TestQuestion[],
   firstNumber: number,
